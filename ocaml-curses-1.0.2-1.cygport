@@ -1,0 +1,11 @@
+inherit ocaml
+
+DESCRIPTION="OCaml ncurses bindings"
+HOMEPAGE="http://www.nongnu.org/ocaml-tmk/"
+SRC_URI="http://download.savannah.nongnu.org/releases/ocaml-tmk/${P}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1 CINCFLAGS="-I/usr/include/ncurses" CLIBS="ncurses"
+}
