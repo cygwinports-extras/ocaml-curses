@@ -1,0 +1,21 @@
+inherit ocaml
+
+NAME="ocaml-curses"
+VERSION=1.0.3
+RELEASE=2
+CATEGORY="Libs"
+SUMMARY="OCaml ncurses bindings"
+DESCRIPTION="OCaml Curses is a project to provide ncurses bindings for the
+Objective Caml language."
+HOMEPAGE="http://www.nongnu.org/ocaml-tmk/"
+SRC_URI="mirror://savannah/ocaml-tmk/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="1.0.3-Wimplicit-decls.patch"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	lndirs
+	cd ${B}
+	cygconf --enable-widec ac_cv_header_windows_h=no
+	cygmake byte opt
+}

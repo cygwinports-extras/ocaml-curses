@@ -1,5 +1,0 @@
-category: OCaml
-requires: libncursesw10 libncursesw-devel ocaml-base
-sdesc: "OCaml ncurses bindings"
-ldesc: "OCaml Curses is a project to provide ncurses bindings for the
-Objective Caml language."
